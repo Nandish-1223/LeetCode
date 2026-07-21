@@ -1,0 +1,17 @@
+class Solution {
+    public String intToRoman(int num) {
+        int[] val = {1000,900,500,400,100,90,50,40,10,9,5,4,1};
+        String[] sym = {"M","CM","D","CD","C","XC","L","XL","X","IX","V","IV","I"};
+        int i = 0;
+        String res = "";
+        int itr = 0;
+        while(num != 0){
+            itr = num / val[i];
+            for(int j = 0; j<itr; j++){
+                res += sym[i];
+            }
+            num -= itr * val[i];
+            i++;
+        }
+        return res;
+    }
